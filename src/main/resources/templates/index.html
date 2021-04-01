@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+      xml:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>OuvertureApplication</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/materialize.min.css}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<h1><a href="listar" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>LISTAR CONTA</a></h1>
+<h3>DIGITE SEU DADOS</h3>
+<form class="container" method="POST" th:object="${conta}">
+
+    <!--suppress CheckTagEmptyBody -->
+    <th:block th:include="messageValidation"></th:block>
+
+    <div class="row" .col 12>
+        <div class="row" .col sm-3>
+            <p><b> CPF:</b></p>
+            <input type="text" value="" name="cpf" th:fieled="*{cpf}"/>
+            <p><b> Nome:</b></p>
+            <input type="text" value="" name="nome" th:fieled="*{nome}"/>
+        </div>
+        <div col-3>
+            <p><b> Sobrenome:</b></p>
+            <input type="text" value="" name="sobrenome" th:fieled="*{sobrenome}"/>
+            <p><b> Cidade:</b></p>
+            <input type="text" value="" name="cidade" th:fieled="*{cidade}"/>
+        </div>
+        <div col-3>
+            <p><b> Cep:</b></p>
+            <input type="text" value="" name="cep" th:fieled="*{cep}"/>
+            <p><b> Local:</b></p>
+            <input type="text" value="" name="local" th:fieled="*{local}"/>
+        </div>
+        <div col-3>
+            <p><b> Estado:</b></p>
+            <input type="text" value="" name="estado" th:fieled="*{estado}"/>
+            <p><b> Data de nascimento:</b></p>
+            <input type="date" value="" name="data_de_nascimento" th:fieled="*{data_de_nascimento}"/>
+        </div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+</form>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
